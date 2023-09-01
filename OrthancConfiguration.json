@@ -3,7 +3,8 @@
   // Configuration.json supports importing ENV vars with ${YourEnvVarName}
   // NOTE about file paths: /images/ and all paths in this file starting with /root
   // are set correctly to match what caMicroscope Dockerfiles set up.
-  // Changing these might cause issues.
+  // Changing these might cause issues. Besides, Dockerfiles will copy
+  // OrthancConfiguration.json from caMicroscope/Distro as well so please don't rename this file.
   "Plugins" : [
     "/root/src/libOrthancIndexer.so"
   ],
@@ -31,12 +32,16 @@
   "DicomThreadsCount" : 3,
 
   "DicomPort" : ${DICOM_PORT},
+
+  // NOTE: Due to a bug in Orthanc 1.12.1 and lower, to disable DICOM TLS,
+  // "DicomTlsEnabled" : false is not enough; please also comment out the line with
+  // DicomTlsPrivateKey
   "DicomTlsEnabled" : false, // DICOM server
   // For DICOM, unlike HTTP, cert (cer or cert or pub or pem) and pkey need to be provided as separate files.
   // For example, the latter means that when the file is opened with a text editor,
   // there's "BEGIN PRIVATE KEY" and "BEGIN CERTIFICATE" in the same file.
+  //"DicomTlsPrivateKey" : "/root/keys/key",
   "DicomTlsCertificate" : "/root/keys/key.pub",
-  "DicomTlsPrivateKey" : "/root/keys/key",
   "DicomTlsRemoteCertificateRequired" : false,
   // AlwaysAllow: If false, only those listed under "DicomModalities" will be capable of these
   "DicomAlwaysAllowStore" : true,
