@@ -46,6 +46,7 @@ services:
   dicomsrv:
     build: "https://github.com/CGDogan/dicomsrv.git"
     container_name: ca-dicomsrv
+    restart: unless-stopped
     stdin_open: true
     tty: true
     ports:
@@ -53,10 +54,8 @@ services:
       - "11112:11112"
     volumes:
       - ./jwt_keys/:/root/keys/
+      - ./images/:/images/
       - ./OrthancConfiguration.json:/root/src/Configuration.json
-      #- type: bind
-      #  source: ./OrthancConfiguration.json
-      #  target: /root/src/Configuration.json
     environment:
       DICOM_PORT: "11112"
       DICOM_UI_PORT: "8042"

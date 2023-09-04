@@ -15,7 +15,7 @@
   },
   "Name" : "camic-orthanc",
   "DicomAet" : "CAMIC-ORTHANC",
-  "StorageDirectory" : "/root/orthanc-storage",
+  "StorageDirectory" : "/images/",
   "IndexDirectory" : "/root/orthanc-index",
   "HttpServerEnabled" : true, // Rest API and GUI
   "OrthancExplorerEnabled" : true, // GUI
@@ -27,6 +27,7 @@
   //},
   "SslEnabled" : false, // HTTP server
   "SslCertificate" : "/root/keys/keyandpub.pem", // both cert and private key
+  "HttpsVerifyPeers" : true, // Verify SSL of other orthanc servers
 
   "MallocArenaMax" : 5, // Suggested by docs to regulate memory use
   "DicomThreadsCount" : 3,
@@ -42,7 +43,8 @@
   // there's "BEGIN PRIVATE KEY" and "BEGIN CERTIFICATE" in the same file.
   //"DicomTlsPrivateKey" : "/root/keys/key",
   "DicomTlsCertificate" : "/root/keys/key.pub",
-  "DicomTlsRemoteCertificateRequired" : false,
+  "DicomTlsRemoteCertificateRequired" : true, // Verify certificate of dicom peers
+
   // AlwaysAllow: If false, only those listed under "DicomModalities" will be capable of these
   "DicomAlwaysAllowStore" : true,
   // The following ones allow retrieving data, which you might not want everyone to do
