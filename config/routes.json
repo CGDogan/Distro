@@ -502,13 +502,13 @@
     "route":"/fs/addedFile",
     "method":"get",
     "handlers":[
-      {"function":"addedFileToFS", "args": ["camic", "slide"]}
+      {"function":"addedFileToFS", "args": []}
     ]
   },{
     "route":"/fs/deletedFile",
     "method":"get",
     "handlers":[
-      {"function":"removedFileFromFS", "args": ["camic", "slide"]}
+      {"function":"removedFileFromFS", "args": []}
     ]
   }
 ]
