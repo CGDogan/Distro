@@ -11,7 +11,7 @@
   "Indexer" : {
     "Enable" : true,
     "Folders" : ["/images/"],
-    "Interval" : 10 // Delay between two synchronizations (seconds)
+    "Interval" : 70 // Delay between two synchronizations (seconds)
   },
   "Name" : "camic-orthanc",
   "DicomAet" : "CAMIC-ORTHANC",
