@@ -11,7 +11,7 @@
   "Indexer" : {
     "Enable" : true,
     "Folders" : ["/images/"],
-    "Interval" : 70 // Delay between two synchronizations (seconds)
+    "Interval" : 10 // Delay between two synchronizations (seconds)
   },
   "StorageCompression" : false, // "true" is incompatible with caMicroscope
   "Name" : "camic-orthanc",
