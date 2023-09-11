@@ -13,6 +13,7 @@
     "Folders" : ["/images/"],
     "Interval" : 70 // Delay between two synchronizations (seconds)
   },
+  "StorageCompression" : false, // "true" is incompatible with caMicroscope
   "Name" : "camic-orthanc",
   "DicomAet" : "CAMIC-ORTHANC",
   "StorageDirectory" : "/images/",
