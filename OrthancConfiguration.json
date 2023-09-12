@@ -21,6 +21,7 @@
   "HttpServerEnabled" : true, // Rest API and GUI
   "OrthancExplorerEnabled" : true, // GUI
   "HttpPort" : ${DICOM_UI_PORT}, // Rest API and GUI
+  "RestApiWriteToFileSystemEnabled" : true, // Rest API and GUI
   "RemoteAccessAllowed" : true,
   "AuthenticationEnabled" : false, // Basic HTTP auth for GUI as in http://httpbin.org/basic-auth/foo/bar
   //"RegisteredUsers" : {
